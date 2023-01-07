@@ -6,22 +6,52 @@ let arr = [
   { id: 3, name: "karen", age: "19", profession: "admin" },
 ];
 
+// calling the functions
+
+PrintDeveloperswithMap();
+PrintDeveloperbyForEach();
+addData();
+removeAdmin(arr);
+concatenateArray(arr,arr2)
+
 function PrintDeveloperswithMap() {
-  //Write your code here
+  arr.map((employee) => {
+    if (employee.profession === "developer") {
+      console.log(
+        employee.name +
+          "," +
+          employee.age +
+          "," +
+          employee.id +
+          "," +
+          employee.profession
+      );
+    }
+  });
 }
 
 function PrintDeveloperbyForEach() {
-  //Write your code here
+  arr.forEach((item) => {
+    if (item.profession === "developer") {
+      console.log(item.name);
+    }
+  });
 }
 
 function addData() {
-  //Write your code here
+  let data = arr;
+  data.push({ id: 4, name: "susan", age: "20", profession: "intern" });
+  console.log(arr);
 }
 
-function removeAdmin() {
-  //Write your code here
+function removeAdmin(arr) {
+  let filteredArr = arr.filter((employee) => employee.profession !== "admin");
+
+  console.log(filteredArr);
 }
 
-function concatenateArray() {
-  //Write your code here
+let arr2 = [{ id: 101, name: "hemant", age: "20", profession: "Unemployed" }]
+function concatenateArray(arr,arr2) {
+  let newArray = arr.concat(arr2);
+  console.log(newArray);
 }
