@@ -5,14 +5,17 @@ let arr = [
   { id: 2, name: "jack", age: "20", profession: "developer" },
   { id: 3, name: "karen", age: "19", profession: "admin" },
 ];
-
+ var array2 = [
+    { id: 101, name: "hemant", age: "20", profession: "Unemployed" },
+    { id: 102, name: "jay", age: "22", profession: "Employed" }
+    ];
 // calling the functions
 
 PrintDeveloperswithMap();
 PrintDeveloperbyForEach();
 addData();
 removeAdmin(arr);
-concatenateArray(arr,arr2)
+concatenateArray(arr, array2);
 
 function PrintDeveloperswithMap() {
   arr.map((employee) => {
@@ -33,7 +36,7 @@ function PrintDeveloperswithMap() {
 function PrintDeveloperbyForEach() {
   arr.forEach((item) => {
     if (item.profession === "developer") {
-      console.log(item.name);
+      console.log(item.name+","+item.id+","+item.age+","+item.profession);
     }
   });
 }
@@ -50,8 +53,10 @@ function removeAdmin(arr) {
   console.log(filteredArr);
 }
 
-let arr2 = [{ id: 101, name: "hemant", age: "20", profession: "Unemployed" }]
-function concatenateArray(arr,arr2) {
-  let newArray = arr.concat(arr2);
+
+
+function concatenateArray(arr, array2) {
+ 
+  let newArray = arr.concat(array2);
   console.log(newArray);
 }
